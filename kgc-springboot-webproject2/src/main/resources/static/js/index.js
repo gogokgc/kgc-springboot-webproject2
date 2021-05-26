@@ -8,6 +8,10 @@ var main = {
 		$('#btn-update').on('click', function() {
 			_this.update();
 		});
+		
+		$('#btn-delete').on('click', function() {
+			_this.delete();
+		});
 	},
 
 	save: function() {
@@ -38,7 +42,8 @@ var main = {
 		};
 
 		var id = $('#id').val();
-
+		
+		if(confirm('Are you sure edit this post?')){
 		$.ajax({
 			type: 'PUT',
 			url: '/api/v1/posts/' + id,
@@ -50,7 +55,30 @@ var main = {
 			window.location.href = '/';
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
-		})
+		});
+		}else{
+			return false;
+		}
+	},
+	
+	delete: function() {
+		var id = $('#id').val();
+		
+		if(confirm('Are you sure for Delete?')){
+		$.ajax({
+			type: 'DELETE',
+			url: '/api/v1/posts/' + id,
+			dataType: 'json',
+			contentType: 'application/json; charset=utf-8',
+		}).done(function() {
+			alert('Delete Complete');
+			window.location.href = '/';
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+		}else{
+		return false;
+		}
 	}
 };
 main.init();
