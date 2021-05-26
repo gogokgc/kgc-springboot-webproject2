@@ -1,10 +1,14 @@
 package com.kgc.blog.service.posts;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kgc.blog.domain.posts.Posts;
 import com.kgc.blog.domain.posts.PostsRepository;
+import com.kgc.blog.web.dto.PostsListResponseDto;
 import com.kgc.blog.web.dto.PostsResponseDto;
 import com.kgc.blog.web.dto.PostsSaveRequestDto;
 import com.kgc.blog.web.dto.PostsUpdateRequestDto;
@@ -40,4 +44,8 @@ public class PostsService {
 		return new PostsResponseDto(entity);
 	}
 
+	
+	public List<PostsListResponseDto> findAllDesc(){
+		return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
+	}
 }
