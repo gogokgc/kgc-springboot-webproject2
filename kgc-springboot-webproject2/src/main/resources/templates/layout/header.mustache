@@ -21,12 +21,19 @@
         <a class="nav-link" href="/posts/save">Posting</a>
       </li>
       
-       
+    {{^userName}} 
       <li class="nav-item ml-auto">
-        <a class="nav-link" href="/user/login">LogIn</a>
+        <a class="nav-link" href="/auth/login">LogIn</a>
       </li>
     </ul>
+    {{/userName}}
   </div> 
+	{{#userName}}
+	
+      	UserName :<span id="user" class="m-2">{{userName}}</span>
+      	<a href="/logout" class="btn btn-dark">Logout</a>
+      	
+	{{/userName}}
 </nav>
 <br/>
 

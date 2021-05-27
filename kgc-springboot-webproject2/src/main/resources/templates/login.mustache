@@ -2,25 +2,16 @@
 
 <br/>
 
-<div class="container">
-  <h2>Login</h2>
-  
-  <form action="/action_page.php" class="was-validated">
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out Username.</div>
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" class="form-control" id=password placeholder="Enter password" name="password" required>
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out Password.</div>
-    </div>
-    
-    <button type="submit" class="btn btn-primary" id="btn-save">login</button>
-  </form>
+<div class="container justify-content-center text-dark">
+      
+	{{^userName}}
+	
+	<ul>
+      	<a href="/oauth2/authorization/google" class="btn btn-primary btn-block btn-lg">Google Login</a>
+      	<a class="btn btn-warning btn-block btn-lg" href="https://kauth.kakao.com/oauth/authorize?client_id=870190cf657e0924d68c25a02b3a35ff&redirect_uri=http://localhost:8090/auth/kakao/callback&response_type=code">kakao Login</a>
+    </ul>
+	
+	{{/userName}}
 </div>
 
 <br/>

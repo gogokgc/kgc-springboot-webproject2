@@ -36,14 +36,19 @@ public class IndexController {
 		return "index";
 	}
 	
-	@GetMapping("/user/login")
+	@GetMapping("/auth/login")
 	public String login() {
 		
 		return "login";
 	}
 	
 	@GetMapping("/posts/save")
-	public String postsSave() {
+	public String postsSave(Model model) {
+		SessionUser user = (SessionUser) httpSession.getAttribute("user");
+		
+		if(user != null) {
+			model.addAttribute("userName", user.getName());
+		}
 		
 		return "postsSave";
 	}
