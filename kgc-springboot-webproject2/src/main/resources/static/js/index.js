@@ -20,7 +20,9 @@ var main = {
 			content: $('#content').val(),
 			author: $('#author').val()
 		};
-
+		
+		if(data.title.length != 0 && data.content.length != 0){
+			
 		$.ajax({
 			type: 'POST',
 			url: '/api/v1/posts',
@@ -33,6 +35,10 @@ var main = {
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		})
+		}else{
+			alert('Please fill out title, content boxs');
+			return false;
+		}
 	},
 
 	update: function() {
