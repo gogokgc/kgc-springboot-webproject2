@@ -63,9 +63,9 @@ public class IndexController {
 	}
 	
 	@GetMapping("/auth/kakao/callback")
-	public @ResponseBody String kakaoCallback() {
+	public @ResponseBody String kakaoCallback(String code) {
 	
-		return "kakao";
+		return "kakao : code : " + code;
 	}
 	
 }
