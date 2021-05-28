@@ -16,24 +16,25 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
      
-      
-      <li class="nav-item">
+    {{#userName}}
+    <li class="nav-item">
         <a class="nav-link" href="/posts/save">Posting</a>
       </li>
       
-    {{^userName}} 
-      <li class="nav-item ml-auto">
-        <a class="nav-link" href="/auth/login">LogIn</a>
-      </li>
-    </ul>
-    {{/userName}}
   </div> 
-	{{#userName}}
+	
 	
       	UserName :<span id="user" class="m-2">{{userName}}</span>
       	<a href="/logout" class="btn btn-dark">Logout</a>
       	
 	{{/userName}}
+	
+	{{^userName}} 
+      <li class="nav-item ml-auto">
+        <a class="nav-link" href="/auth/login">LogIn</a>
+      </li>
+    </ul>
+    {{/userName}}
 </nav>
 <br/>
 
