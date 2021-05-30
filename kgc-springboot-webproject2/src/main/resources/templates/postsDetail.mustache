@@ -31,11 +31,14 @@
 </div>
 <div class="container">
 	<div class="d-flex">
-	<a href="/posts/update/{{id}}" class="btn btn-primary m-1">Edit</a>
+	<button id = "btn-check" class="btn btn-warning m-1">edit</button>
 	<a href="/" class="btn btn-secondary m-1">back</a>
 	</div>
 
 </div>
+<input class="invisible" id="userName" value="{{userName}}"/>
+<input class="invisible" id="author" value="{{post.author}}"/>
+<input class="invisible" id="id" value="{{post.id}}"/>
 <script>
 	$('.summernote').summernote({
 		tabsize : 2,

@@ -13,6 +13,9 @@ var main = {
 			_this.delete();
 		});
 		
+		$('#btn-check').on('click', function() {
+			_this.check();
+		});
 	},
 
 	save: function() {
@@ -86,7 +89,19 @@ var main = {
 		}else{
 		return false;
 		}
+	},
 	
-	}
+	check: function() {
+		var name = $('#userName').val();
+		var author = $('#author').val();
+		var id = $('#id').val();
+		if(name == author){
+			window.location.href = '/posts/update/' + id;
+		}else{
+			alert('you can not edit others posting');
+		}
+		
+	},
+	
 };
 main.init();
