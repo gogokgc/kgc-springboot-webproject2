@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kgc.blog.config.auth.dto.SessionUser;
 import com.kgc.blog.service.posts.PostsService;
@@ -60,12 +59,6 @@ public class IndexController {
 		model.addAttribute("post", dto);
 		
 		return "postsUpdate";
-	}
-	
-	@GetMapping("/auth/kakao/callback")
-	public @ResponseBody String kakaoCallback(String code) {
-	
-		return "kakao : code : " + code;
 	}
 	
 }
