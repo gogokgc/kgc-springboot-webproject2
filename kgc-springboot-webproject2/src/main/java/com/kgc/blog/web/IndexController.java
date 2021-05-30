@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kgc.blog.config.auth.dto.SessionUser;
 import com.kgc.blog.service.posts.PostsService;
@@ -61,4 +62,18 @@ public class IndexController {
 		return "postsUpdate";
 	}
 	
+	@GetMapping("/posts/detail/{id}")
+	public String postsDetail(@PathVariable Long id, Model model) {
+		
+		SessionUser user = (SessionUser) httpSession.getAttribute("user");
+		
+		if(user != null) {
+			model.addAttribute("userName", user.getName());
+		}
+		
+		PostsResponseDto dto = postsService.findById(id);
+		model.addAttribute("post", dto);
+		
+		return "postsDetail";
+	}
 }

@@ -1,13 +1,17 @@
 {{>layout/header}}
 
+<div class="container-fluid">
+
 {{#posts}}
+
+
 <div class="row justify-content-center text-dark">
 
-	<div class="container ">
+	<div class="container">
 	  <div class="card">
 	    <div class="card-body">
-	      <h4 class="card-title"><a href="/posts/update/{{id}}">{{title}}</a></h4>
-	      <p class="card-text">{{content}}</p>
+	      <h4 class="card-title"><a href="/posts/detail/{{id}}">Title : {{title}}</a></h4>
+	      <p class="card-text">Writer : {{author}}</p>
 	      
 	    </div>
 	  </div>
@@ -15,6 +19,7 @@
 	</div>
  
 </div>
+
 {{/posts}}
-	
+</div>	
 {{>layout/footer}}

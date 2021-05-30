@@ -2,13 +2,12 @@
 
 <br/>
 
-<div class="container justify-content-center text-dark">
+<div class="container justify-content-center text-dark mh-100" style="height:400px">
       
 	{{^userName}}
 	
 	<ul>
       	<a href="/oauth2/authorization/google" class="btn btn-primary btn-block btn-lg">Google Login</a>
-      	<a class="btn btn-warning btn-block btn-lg" href="https://kauth.kakao.com/oauth/authorize?client_id=870190cf657e0924d68c25a02b3a35ff&redirect_uri=http://localhost:8090/auth/kakao/callback&response_type=code">kakao Login</a>
     </ul>
 	
 	{{/userName}}
