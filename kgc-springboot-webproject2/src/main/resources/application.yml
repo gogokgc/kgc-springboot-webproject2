@@ -14,12 +14,6 @@ spring:
     include:
     - oauth
     
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://kgc-springboot-webproject2.c4yzvzdyphko.ap-northeast-2.rds.amazonaws.com:3306/kgc_springboot_webproject2?serverTimezone=Asia/Seoul
-    username: kgc
-    password: rla3rb1cjf6
-    
   jpa:
     open-in-view: true
     hibernate:
