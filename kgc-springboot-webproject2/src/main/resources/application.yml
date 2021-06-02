@@ -12,7 +12,8 @@ spring:
   
   profiles:
     include:
-    - real-oauth
+    - real
+    - oauth
     
   jpa:
     open-in-view: true
